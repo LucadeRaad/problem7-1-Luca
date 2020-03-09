@@ -15,7 +15,14 @@ public class ArrayDictionaryTest {
 
     @Test
     public void remove() {
-        System.out.println("test");
+        int testSize = 5;
+        ArrayDictionary dict = new ArrayDictionary(testSize);
+        assertTrue(dict.add(2, 82));
+        assertTrue(dict.add(4, 84));
+        assertTrue(dict.add(7, 87));
+        System.out.println(dict);
+        dict.remove(7);
+        System.out.println(dict);
         assertTrue(false);  // place holder
     }
 
