@@ -58,6 +58,7 @@ public class ArrayDictionary implements Dictionary {
     @Override
     public boolean remove(int key) {
         // homework
+        System.out.println("test");
         return false;
     }
 

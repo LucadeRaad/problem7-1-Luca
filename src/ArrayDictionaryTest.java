@@ -15,7 +15,7 @@ public class ArrayDictionaryTest {
 
     @Test
     public void remove() {
-        // homework
+        System.out.println("test");
         assertTrue(false);  // place holder
     }
 
