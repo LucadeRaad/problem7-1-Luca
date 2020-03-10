@@ -66,13 +66,13 @@ public class ArrayDictionary implements Dictionary {
         // Checking for null pointer exceptions
         if(pointer == null) return false;
 
+        KVEntry pointer2 = pointer.next;
+
         // Checks if the first
         if(pointer.key == key) {
-            pointer = pointer.next;
+            entries[key] = pointer2;
             return true;
         }
-
-        KVEntry pointer2 = pointer.next;
 
         // Traversing a linked list
         while(pointer2 != null) {

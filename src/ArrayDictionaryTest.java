@@ -44,7 +44,6 @@ public class ArrayDictionaryTest {
 
         // Sets up the dictionaries
         for(int i = 0; i < testSizes.length; i++) {
-            System.out.println(i);
             dictArray[i] = new ArrayDictionary(testSizes[i]);
             switch (i) {
                 // Set 1
@@ -78,7 +77,6 @@ public class ArrayDictionaryTest {
                         dictArray[i].add(4, 406);
                         break;
             }
-            System.out.println(dictArray[i].toString() + " Attempted to delete " + testKeys[i]);
             // Testing the newly created dictionary
             assertEquals(dictArray[i].remove(testKeys[i]), testResult[i]);
         }
