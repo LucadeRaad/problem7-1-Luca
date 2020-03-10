@@ -57,12 +57,20 @@ public class ArrayDictionary implements Dictionary {
     // Return true if an entry is deleted, false otherwise
     @Override
     public boolean remove(int key) {
+        // Fixing dividing by 1 errors
+        if(capacity == 0) return false;
         // Starting at dictionary key. Each key is a linked list
         int keyLocation = hashFunction(key);
         KVEntry pointer = entries[keyLocation];
 
         // Checking for null pointer exceptions
         if(pointer == null) return false;
+
+        // Checks if the first
+        if(pointer.key == key) {
+            pointer = pointer.next;
+            return true;
+        }
 
         KVEntry pointer2 = pointer.next;
 

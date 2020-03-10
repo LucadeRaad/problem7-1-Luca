@@ -23,10 +23,28 @@ public class ArrayDictionaryTest {
                 3, 3, 3, 3
         };
 
+        int[] testKeys = {
+                -1, 0, 1,
+                2, 0,
+                0, 1, 2, 3,
+                3, 1,
+                1, 4, 7, 8
+        };
+
+        // What the keys should return
+        boolean[] testResult = {
+                false, false, false,
+                false, true,
+                true, true, false, false,
+                false, true,
+                true, true, false, false
+        };
+
         ArrayDictionary[] dictArray = new ArrayDictionary[testSizes.length];
 
         // Sets up the dictionaries
         for(int i = 0; i < testSizes.length; i++) {
+            System.out.println(i);
             dictArray[i] = new ArrayDictionary(testSizes[i]);
             switch (i) {
                 // Set 1
@@ -60,17 +78,10 @@ public class ArrayDictionaryTest {
                         dictArray[i].add(4, 406);
                         break;
             }
+            System.out.println(dictArray[i].toString() + " Attempted to delete " + testKeys[i]);
+            // Testing the newly created dictionary
+            assertEquals(dictArray[i].remove(testKeys[i]), testResult[i]);
         }
-
-        int[] testKeys = {
-                -1, 0, 1,
-                2, 0,
-                0, 1, 2, 3,
-                3, 1,
-                1, 4, 7, 8
-        };
-
-        assertTrue(false);  // place holder
     }
 
     @Test
