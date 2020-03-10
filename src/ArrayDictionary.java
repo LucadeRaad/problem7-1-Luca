@@ -76,7 +76,6 @@ public class ArrayDictionary implements Dictionary {
 
         // Traversing a linked list
         while(pointer2 != null) {
-            // Automatic garbage collection ftw
             if(pointer2.key == key) {
                 pointer.next = pointer2.next;
                 return true;
