@@ -92,7 +92,16 @@ public class ArrayDictionary implements Dictionary {
     // with the key
     @Override
     public boolean contains(int key) {
-        // homework
+        if(capacity == 0) return false;
+        // Starting at dictionary key. Each key is a linked list
+        int keyLocation = hashFunction(key);
+        KVEntry pointer = entries[keyLocation];
+
+        // If not found in loop, the value is not found
+        while(pointer != null) {
+            if(pointer.key == key) return true;
+            pointer = pointer.next;
+        }
         return false;
     }
 
